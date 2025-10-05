@@ -1,0 +1,27 @@
+{
+    "name": "waynelogic/magic-forms",
+    "description": "Forms Plugin for Filament",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Waynelogic\\MagicForms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Waynelogic"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel-notification-channels/telegram": "^6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynelogic\\MagicForms\\MagicFormsServiceProvider"
+            ]
+        }
+    }
+}

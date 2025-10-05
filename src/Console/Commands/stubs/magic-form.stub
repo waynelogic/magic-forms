@@ -1,0 +1,34 @@
+<?php
+
+namespace App\MagicForms;
+
+use Waynelogic\MagicForms\Form\AbstractForm;
+
+class {{class}} extends AbstractForm
+{
+    public string $group = '{{group}}';
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            // Add your validation rules here
+        ];
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function attributes(): array
+    {
+        return [
+            // Add your attribute labels here
+        ];
+    }
+}
