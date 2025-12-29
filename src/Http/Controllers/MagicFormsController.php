@@ -77,10 +77,8 @@ abstract class MagicFormsController
      * Loads all forms to private $forms property
      * @return array
      */
-    public function getForms() : array
-    {
-        return [];
-    }
+    abstract public function getForms() : array;
+
     private function getFormClass(mixed $formType)
     {
         return $this->forms[$formType] ?? CommonForm::class;
