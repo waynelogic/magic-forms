@@ -90,5 +90,5 @@ abstract class MagicFormsController
     {
         Notification::routes($this->currentForm->routes())->notify(new MagicFormNotification($obFormRecord));
     }
-    abstract function success(Request $request);
+    abstract public function success(Request $request);
 }
