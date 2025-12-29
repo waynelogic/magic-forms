@@ -16,10 +16,4 @@ class ViewFormRecord extends ViewRecord
 
         $this->record->markAsRead();
     }
-    protected function getHeaderActions(): array
-    {
-        return [
-            EditAction::make(),
-        ];
-    }
 }
