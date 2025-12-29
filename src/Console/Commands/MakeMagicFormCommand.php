@@ -13,7 +13,7 @@ class MakeMagicFormCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:magic-form {name : The name of the form class} {--group= : Group name for the form}';
+    protected $signature = 'make:magic-form {name : The name of the form class}';
 
     /**
      * The group name for the form.
@@ -36,17 +36,6 @@ class MakeMagicFormCommand extends GeneratorCommand
      */
     protected $type = 'Magic Form';
 
-    /**
-     * Execute the console command.
-     * @throws FileNotFoundException
-     */
-    public function handle(): void
-    {
-        $this->requestGroup();
-
-        parent::handle();
-    }
-
     protected function getStub(): string
     {
         return __DIR__ . '/stubs/magic-form.stub';
@@ -64,19 +53,10 @@ class MakeMagicFormCommand extends GeneratorCommand
         ];
     }
 
-    private function requestGroup(): void
-    {
-        $group = $this->ask('Enter group name', $this->group);
-
-        if (!empty($group)) {
-            $this->group = $group;
-        }
-    }
-
     protected function replaceClass($stub, $name): array|string
     {
         $stub = parent::replaceClass($stub, $name);
 
-        return str_replace('{{group}}', addslashes($this->group), $stub);
+        return str_replace('{{group}}', addslashes($this->argument('name')), $stub);
     }
 }
